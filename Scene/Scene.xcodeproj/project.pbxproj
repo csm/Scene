@@ -1,0 +1,320 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		70CD789D1391BFE2001E02C7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70CD789C1391BFE2001E02C7 /* UIKit.framework */; };
+		70CD789F1391BFE2001E02C7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70CD789E1391BFE2001E02C7 /* Foundation.framework */; };
+		70CD78A11391BFE2001E02C7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70CD78A01391BFE2001E02C7 /* CoreGraphics.framework */; };
+		70CD78A71391BFE2001E02C7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 70CD78A51391BFE2001E02C7 /* InfoPlist.strings */; };
+		70CD78AA1391BFE2001E02C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 70CD78A91391BFE2001E02C7 /* main.m */; };
+		70CD78AD1391BFE2001E02C7 /* SceneAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 70CD78AC1391BFE2001E02C7 /* SceneAppDelegate.m */; };
+		70CD78B01391BFE2001E02C7 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70CD78AE1391BFE2001E02C7 /* MainWindow.xib */; };
+		70CD78B31391BFE2001E02C7 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70CD78B21391BFE2001E02C7 /* MainViewController.m */; };
+		70CD78B51391BFE2001E02C7 /* MainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70CD78B41391BFE2001E02C7 /* MainView.xib */; };
+		70CD78B81391BFE2001E02C7 /* FlipsideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70CD78B71391BFE2001E02C7 /* FlipsideViewController.m */; };
+		70CD78BA1391BFE2001E02C7 /* FlipsideView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70CD78B91391BFE2001E02C7 /* FlipsideView.xib */; };
+		70CD78C61391C052001E02C7 /* DroidSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 70CD78C41391C052001E02C7 /* DroidSans-Bold.ttf */; };
+		70CD78C71391C052001E02C7 /* DroidSans.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 70CD78C51391C052001E02C7 /* DroidSans.ttf */; };
+		70CD78CC1391C309001E02C7 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 70CD78C81391C309001E02C7 /* background.png */; };
+		70CD78CD1391C309001E02C7 /* background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 70CD78C91391C309001E02C7 /* background@2x.png */; };
+		70CD78CE1391C309001E02C7 /* default.png in Resources */ = {isa = PBXBuildFile; fileRef = 70CD78CA1391C309001E02C7 /* default.png */; };
+		70CD78CF1391C309001E02C7 /* default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 70CD78CB1391C309001E02C7 /* default@2x.png */; };
+		70CD78D21391C642001E02C7 /* backarrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 70CD78D01391C641001E02C7 /* backarrow.png */; };
+		70CD78D31391C642001E02C7 /* backarrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 70CD78D11391C641001E02C7 /* backarrow@2x.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		70CD78981391BFE2001E02C7 /* Scene.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scene.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		70CD789C1391BFE2001E02C7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		70CD789E1391BFE2001E02C7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		70CD78A01391BFE2001E02C7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		70CD78A41391BFE2001E02C7 /* Scene-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Scene-Info.plist"; sourceTree = "<group>"; };
+		70CD78A61391BFE2001E02C7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		70CD78A81391BFE2001E02C7 /* Scene-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Scene-Prefix.pch"; sourceTree = "<group>"; };
+		70CD78A91391BFE2001E02C7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		70CD78AB1391BFE2001E02C7 /* SceneAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneAppDelegate.h; sourceTree = "<group>"; };
+		70CD78AC1391BFE2001E02C7 /* SceneAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneAppDelegate.m; sourceTree = "<group>"; };
+		70CD78AF1391BFE2001E02C7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		70CD78B11391BFE2001E02C7 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		70CD78B21391BFE2001E02C7 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		70CD78B41391BFE2001E02C7 /* MainView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainView.xib; sourceTree = "<group>"; };
+		70CD78B61391BFE2001E02C7 /* FlipsideViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlipsideViewController.h; sourceTree = "<group>"; };
+		70CD78B71391BFE2001E02C7 /* FlipsideViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlipsideViewController.m; sourceTree = "<group>"; };
+		70CD78B91391BFE2001E02C7 /* FlipsideView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FlipsideView.xib; sourceTree = "<group>"; };
+		70CD78C41391C052001E02C7 /* DroidSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DroidSans-Bold.ttf"; sourceTree = "<group>"; };
+		70CD78C51391C052001E02C7 /* DroidSans.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = DroidSans.ttf; sourceTree = "<group>"; };
+		70CD78C81391C309001E02C7 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
+		70CD78C91391C309001E02C7 /* background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background@2x.png"; sourceTree = "<group>"; };
+		70CD78CA1391C309001E02C7 /* default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default.png; sourceTree = "<group>"; };
+		70CD78CB1391C309001E02C7 /* default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default@2x.png"; sourceTree = "<group>"; };
+		70CD78D01391C641001E02C7 /* backarrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backarrow.png; sourceTree = "<group>"; };
+		70CD78D11391C641001E02C7 /* backarrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backarrow@2x.png"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		70CD78951391BFE2001E02C7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				70CD789D1391BFE2001E02C7 /* UIKit.framework in Frameworks */,
+				70CD789F1391BFE2001E02C7 /* Foundation.framework in Frameworks */,
+				70CD78A11391BFE2001E02C7 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		70CD788D1391BFE2001E02C7 = {
+			isa = PBXGroup;
+			children = (
+				70CD78A21391BFE2001E02C7 /* Scene */,
+				70CD789B1391BFE2001E02C7 /* Frameworks */,
+				70CD78991391BFE2001E02C7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		70CD78991391BFE2001E02C7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				70CD78981391BFE2001E02C7 /* Scene.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		70CD789B1391BFE2001E02C7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				70CD789C1391BFE2001E02C7 /* UIKit.framework */,
+				70CD789E1391BFE2001E02C7 /* Foundation.framework */,
+				70CD78A01391BFE2001E02C7 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		70CD78A21391BFE2001E02C7 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				70CD78AB1391BFE2001E02C7 /* SceneAppDelegate.h */,
+				70CD78AC1391BFE2001E02C7 /* SceneAppDelegate.m */,
+				70CD78AE1391BFE2001E02C7 /* MainWindow.xib */,
+				70CD78B11391BFE2001E02C7 /* MainViewController.h */,
+				70CD78B21391BFE2001E02C7 /* MainViewController.m */,
+				70CD78B41391BFE2001E02C7 /* MainView.xib */,
+				70CD78B61391BFE2001E02C7 /* FlipsideViewController.h */,
+				70CD78B71391BFE2001E02C7 /* FlipsideViewController.m */,
+				70CD78B91391BFE2001E02C7 /* FlipsideView.xib */,
+				70CD78A31391BFE2001E02C7 /* Supporting Files */,
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
+		70CD78A31391BFE2001E02C7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				70CD78D01391C641001E02C7 /* backarrow.png */,
+				70CD78D11391C641001E02C7 /* backarrow@2x.png */,
+				70CD78C81391C309001E02C7 /* background.png */,
+				70CD78C91391C309001E02C7 /* background@2x.png */,
+				70CD78CA1391C309001E02C7 /* default.png */,
+				70CD78CB1391C309001E02C7 /* default@2x.png */,
+				70CD78C41391C052001E02C7 /* DroidSans-Bold.ttf */,
+				70CD78C51391C052001E02C7 /* DroidSans.ttf */,
+				70CD78A41391BFE2001E02C7 /* Scene-Info.plist */,
+				70CD78A51391BFE2001E02C7 /* InfoPlist.strings */,
+				70CD78A81391BFE2001E02C7 /* Scene-Prefix.pch */,
+				70CD78A91391BFE2001E02C7 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		70CD78971391BFE2001E02C7 /* Scene */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 70CD78BD1391BFE2001E02C7 /* Build configuration list for PBXNativeTarget "Scene" */;
+			buildPhases = (
+				70CD78941391BFE2001E02C7 /* Sources */,
+				70CD78951391BFE2001E02C7 /* Frameworks */,
+				70CD78961391BFE2001E02C7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Scene;
+			productName = Scene;
+			productReference = 70CD78981391BFE2001E02C7 /* Scene.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		70CD788F1391BFE2001E02C7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "Modal Domains";
+			};
+			buildConfigurationList = 70CD78921391BFE2001E02C7 /* Build configuration list for PBXProject "Scene" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 70CD788D1391BFE2001E02C7;
+			productRefGroup = 70CD78991391BFE2001E02C7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				70CD78971391BFE2001E02C7 /* Scene */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		70CD78961391BFE2001E02C7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				70CD78A71391BFE2001E02C7 /* InfoPlist.strings in Resources */,
+				70CD78B01391BFE2001E02C7 /* MainWindow.xib in Resources */,
+				70CD78B51391BFE2001E02C7 /* MainView.xib in Resources */,
+				70CD78BA1391BFE2001E02C7 /* FlipsideView.xib in Resources */,
+				70CD78C61391C052001E02C7 /* DroidSans-Bold.ttf in Resources */,
+				70CD78C71391C052001E02C7 /* DroidSans.ttf in Resources */,
+				70CD78CC1391C309001E02C7 /* background.png in Resources */,
+				70CD78CD1391C309001E02C7 /* background@2x.png in Resources */,
+				70CD78CE1391C309001E02C7 /* default.png in Resources */,
+				70CD78CF1391C309001E02C7 /* default@2x.png in Resources */,
+				70CD78D21391C642001E02C7 /* backarrow.png in Resources */,
+				70CD78D31391C642001E02C7 /* backarrow@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		70CD78941391BFE2001E02C7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				70CD78AA1391BFE2001E02C7 /* main.m in Sources */,
+				70CD78AD1391BFE2001E02C7 /* SceneAppDelegate.m in Sources */,
+				70CD78B31391BFE2001E02C7 /* MainViewController.m in Sources */,
+				70CD78B81391BFE2001E02C7 /* FlipsideViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		70CD78A51391BFE2001E02C7 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				70CD78A61391BFE2001E02C7 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		70CD78AE1391BFE2001E02C7 /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				70CD78AF1391BFE2001E02C7 /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		70CD78BB1391BFE2001E02C7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		70CD78BC1391BFE2001E02C7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+		70CD78BE1391BFE2001E02C7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Scene/Scene-Prefix.pch";
+				INFOPLIST_FILE = "Scene/Scene-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		70CD78BF1391BFE2001E02C7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Scene/Scene-Prefix.pch";
+				INFOPLIST_FILE = "Scene/Scene-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		70CD78921391BFE2001E02C7 /* Build configuration list for PBXProject "Scene" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				70CD78BB1391BFE2001E02C7 /* Debug */,
+				70CD78BC1391BFE2001E02C7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		70CD78BD1391BFE2001E02C7 /* Build configuration list for PBXNativeTarget "Scene" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				70CD78BE1391BFE2001E02C7 /* Debug */,
+				70CD78BF1391BFE2001E02C7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 70CD788F1391BFE2001E02C7 /* Project object */;
+}
