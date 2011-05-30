@@ -25,15 +25,20 @@ except:
     from django.utils import simplejson as json
 
 import hashlib
+import hmac
 
 import Post
 import UserInfo
 
+def signit(udid, pin, nonce):
+    return hmac.new(hashlib.sha1(pin).digest(), udid + nonce, hashlib.sha1).hexdigest()
+
 class MainHandler(webapp.RequestHandler):
-    def get(self):
+    def put(self):
+        d = json.loads(self.request.body)
         if self.request.path == '/spy':
-            lat = self.request.get('lt')
-            lon = self.request.get('ln')
+            lat = d.get('lt')
+            lon = d.get('ln')
             try:
                 lat = float(lat)
                 lon = float(lon)
@@ -43,14 +48,10 @@ class MainHandler(webapp.RequestHandler):
                 self.response.out.write(json.dumps(list(map(lambda x : x.to_dict())), results), separators=(',',':'))
             except:
                 self.error(400)
-        else:
-            self.error(404)
-
-    def post(self):
-        if self.request.path == '/enter':
-            pin = self.request.get('p')
-            udid = self.request.get('d')
-            name = self.request.get('n')
+        elif self.request.path == '/go':
+            pin = d.get('p')
+            udid = d.get('d')
+            name = d.get('n')
             query = db.GqlQuery('SELECT * FROM UserInfo WHERE device_ids = :1', udid)
             results = query.fetch()
             for user in results:
@@ -61,10 +62,10 @@ class MainHandler(webapp.RequestHandler):
             user = UserInfo.UserInfo(device_ids = [udid], pin_number = pin, name = name)
             user.put()
         elif self.request.path == '/say':
-            udid = self.request.get('d')
-            nonce = self.request.get('n')
-            tok = self.request.get('t')
-            msg = self.request.get('m')
+            udid = d.get('d')
+            nonce = d.get('n')
+            tok = d.get('t')
+            msg = d.get('m')
             try:
                 lat = float(self.request.get('lt'))
                 lon = float(self.request.get('ln'))
@@ -80,22 +81,40 @@ class MainHandler(webapp.RequestHandler):
                 self.error(401)
                 return
             for user in results:
-                md = hashlib.sha1()
-                md.update(udid)
-                md.update(nonce)
-                md.update(user.pin_number)
-                tok2 = md.hexdigest()
+                tok2 = dosign(udid, user.pin_number, nonce)
                 if tok.lower() == tok2.lower():
                     post = Post.Post(user = user, msg = msg, location = db.GeoPt(lat, lon))
                     post.update_location()
                     post.put()
                     return
                 self.error(401)
+        elif self.request.path == '/my':
+            udid = d.get('d')
+            nonce = d.get('n')
+            tok = d.get('t')
+            query = db.GqlQuery('SELECT * FROM UserInfo WHERE device_ids = :1', udid)
+            results = query.fetch()
+            if len(results) == 0:
+                self.error(401)
+                return
+            for user in results:
+                tok2 = dosign(udid, user.pin_numebr, nonce)
+                if tok.lower() == tok2.lower():
+                    query = Post.Post.all()
+                    query.filter('user = ', user)
+                    query.order('-date')
+                    r = query.fetch(1)
+                    ret = []
+                    if len(r) > 0:
+                        ret.append(r[0].to_dict())
+                    self.response.headers['Content-Type'] = 'text/json'
+                    self.response.out.write(json.dumps(ret, separators=(',',':')))
+                    return
         else:
             self.error(404)
 
 def main():
-    application = webapp.WSGIApplication([('/(enter|spy|say)', MainHandler)],
+    application = webapp.WSGIApplication([('/(go|my|spy|say)', MainHandler)],
                                          debug=True)
     util.run_wsgi_app(application)
 
