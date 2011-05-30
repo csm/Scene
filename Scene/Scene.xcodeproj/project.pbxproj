@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		70ADC29C139316340041920E /* GradientButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 70ADC29B139316340041920E /* GradientButton.m */; };
 		70CD789D1391BFE2001E02C7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70CD789C1391BFE2001E02C7 /* UIKit.framework */; };
 		70CD789F1391BFE2001E02C7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70CD789E1391BFE2001E02C7 /* Foundation.framework */; };
 		70CD78A11391BFE2001E02C7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70CD78A01391BFE2001E02C7 /* CoreGraphics.framework */; };
@@ -26,9 +27,15 @@
 		70CD78CF1391C309001E02C7 /* default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 70CD78CB1391C309001E02C7 /* default@2x.png */; };
 		70CD78D21391C642001E02C7 /* backarrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 70CD78D01391C641001E02C7 /* backarrow.png */; };
 		70CD78D31391C642001E02C7 /* backarrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 70CD78D11391C641001E02C7 /* backarrow@2x.png */; };
+		70CD78D61391D775001E02C7 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 70CD78D51391D774001E02C7 /* Post.m */; };
+		70CD78D91392DE26001E02C7 /* bubble.png in Resources */ = {isa = PBXBuildFile; fileRef = 70CD78D71392DE24001E02C7 /* bubble.png */; };
+		70CD78DA1392DE26001E02C7 /* bubble@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 70CD78D81392DE25001E02C7 /* bubble@2x.png */; };
+		70CD78DC1392E692001E02C7 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70CD78DB1392E692001E02C7 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		70ADC29A139316340041920E /* GradientButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GradientButton.h; path = iphonegradientbuttons/Classes/GradientButton.h; sourceTree = "<group>"; };
+		70ADC29B139316340041920E /* GradientButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GradientButton.m; path = iphonegradientbuttons/Classes/GradientButton.m; sourceTree = "<group>"; };
 		70CD78981391BFE2001E02C7 /* Scene.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scene.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70CD789C1391BFE2001E02C7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		70CD789E1391BFE2001E02C7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -54,6 +61,11 @@
 		70CD78CB1391C309001E02C7 /* default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default@2x.png"; sourceTree = "<group>"; };
 		70CD78D01391C641001E02C7 /* backarrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backarrow.png; sourceTree = "<group>"; };
 		70CD78D11391C641001E02C7 /* backarrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backarrow@2x.png"; sourceTree = "<group>"; };
+		70CD78D41391D773001E02C7 /* Post.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
+		70CD78D51391D774001E02C7 /* Post.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
+		70CD78D71392DE24001E02C7 /* bubble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bubble.png; sourceTree = "<group>"; };
+		70CD78D81392DE25001E02C7 /* bubble@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bubble@2x.png"; sourceTree = "<group>"; };
+		70CD78DB1392E692001E02C7 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70CD78DC1392E692001E02C7 /* CoreLocation.framework in Frameworks */,
 				70CD789D1391BFE2001E02C7 /* UIKit.framework in Frameworks */,
 				70CD789F1391BFE2001E02C7 /* Foundation.framework in Frameworks */,
 				70CD78A11391BFE2001E02C7 /* CoreGraphics.framework in Frameworks */,
@@ -70,9 +83,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		70ADC2981393159D0041920E /* Gradient Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				70ADC29A139316340041920E /* GradientButton.h */,
+				70ADC29B139316340041920E /* GradientButton.m */,
+			);
+			name = "Gradient Buttons";
+			sourceTree = "<group>";
+		};
 		70CD788D1391BFE2001E02C7 = {
 			isa = PBXGroup;
 			children = (
+				70CD78DB1392E692001E02C7 /* CoreLocation.framework */,
 				70CD78A21391BFE2001E02C7 /* Scene */,
 				70CD789B1391BFE2001E02C7 /* Frameworks */,
 				70CD78991391BFE2001E02C7 /* Products */,
@@ -100,6 +123,7 @@
 		70CD78A21391BFE2001E02C7 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				70ADC2981393159D0041920E /* Gradient Buttons */,
 				70CD78AB1391BFE2001E02C7 /* SceneAppDelegate.h */,
 				70CD78AC1391BFE2001E02C7 /* SceneAppDelegate.m */,
 				70CD78AE1391BFE2001E02C7 /* MainWindow.xib */,
@@ -110,6 +134,8 @@
 				70CD78B71391BFE2001E02C7 /* FlipsideViewController.m */,
 				70CD78B91391BFE2001E02C7 /* FlipsideView.xib */,
 				70CD78A31391BFE2001E02C7 /* Supporting Files */,
+				70CD78D41391D773001E02C7 /* Post.h */,
+				70CD78D51391D774001E02C7 /* Post.m */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -117,6 +143,8 @@
 		70CD78A31391BFE2001E02C7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				70CD78D71392DE24001E02C7 /* bubble.png */,
+				70CD78D81392DE25001E02C7 /* bubble@2x.png */,
 				70CD78D01391C641001E02C7 /* backarrow.png */,
 				70CD78D11391C641001E02C7 /* backarrow@2x.png */,
 				70CD78C81391C309001E02C7 /* background.png */,
@@ -195,6 +223,8 @@
 				70CD78CF1391C309001E02C7 /* default@2x.png in Resources */,
 				70CD78D21391C642001E02C7 /* backarrow.png in Resources */,
 				70CD78D31391C642001E02C7 /* backarrow@2x.png in Resources */,
+				70CD78D91392DE26001E02C7 /* bubble.png in Resources */,
+				70CD78DA1392DE26001E02C7 /* bubble@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,6 +239,8 @@
 				70CD78AD1391BFE2001E02C7 /* SceneAppDelegate.m in Sources */,
 				70CD78B31391BFE2001E02C7 /* MainViewController.m in Sources */,
 				70CD78B81391BFE2001E02C7 /* FlipsideViewController.m in Sources */,
+				70CD78D61391D775001E02C7 /* Post.m in Sources */,
+				70ADC29C139316340041920E /* GradientButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,6 +345,7 @@
 				70CD78BF1391BFE2001E02C7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

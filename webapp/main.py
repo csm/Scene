@@ -15,25 +15,32 @@
 # limitations under the License.
 #
 from google.appengine.ext import webapp
+from google.appengine.ext import db
 from google.appengine.ext.webapp import util
 
+import re
 try:
     import json
 except:
-    import simplejson as json
+    from django.utils import simplejson as json
+
+import hashlib
 
 import Post
+import UserInfo
 
 class MainHandler(webapp.RequestHandler):
     def get(self):
-        if self.request.path == '/listen':
+        if self.request.path == '/spy':
             lat = self.request.get('lt')
             lon = self.request.get('ln')
             try:
                 lat = float(lat)
                 lon = float(lon)
                 query = Post.Post.all()
-                results = Post.Post.proximity_fetch
+                results = Post.Post.proximity_fetch(Post.Post.all(), db.GeoPt(lat, lon), 50)
+                self.response.headers['Content-Type'] = 'text/json'
+                self.response.out.write(json.dumps(list(map(lambda x : x.to_dict())), results), separators=(',',':'))
             except:
                 self.error(400)
         else:
@@ -41,14 +48,54 @@ class MainHandler(webapp.RequestHandler):
 
     def post(self):
         if self.request.path == '/enter':
-            # Post something.
+            pin = self.request.get('p')
+            udid = self.request.get('d')
+            name = self.request.get('n')
+            query = db.GqlQuery('SELECT * FROM UserInfo WHERE device_ids = :1', udid)
+            results = query.fetch()
+            for user in results:
+                if user.pin_number == pin:
+                    user.name = name
+                    user.put()
+                    return
+            user = UserInfo.UserInfo(device_ids = [udid], pin_number = pin, name = name)
+            user.put()
         elif self.request.path == '/say':
-            
+            udid = self.request.get('d')
+            nonce = self.request.get('n')
+            tok = self.request.get('t')
+            msg = self.request.get('m')
+            try:
+                lat = float(self.request.get('lt'))
+                lon = float(self.request.get('ln'))
+            except:
+                self.error(400)
+                return
+            if udid == None or nonce == None or tok == None or msg == None:
+                self.error(400)
+                return
+            query = db.GqlQuery('SELECT * FROM UserInfo WHERE device_ids = :1', udid)
+            results = query.fetch()
+            if len(results) == 0:
+                self.error(401)
+                return
+            for user in results:
+                md = hashlib.sha1()
+                md.update(udid)
+                md.update(nonce)
+                md.update(user.pin_number)
+                tok2 = md.hexdigest()
+                if tok.lower() == tok2.lower():
+                    post = Post.Post(user = user, msg = msg, location = db.GeoPt(lat, lon))
+                    post.update_location()
+                    post.put()
+                    return
+                self.error(401)
         else:
             self.error(404)
 
 def main():
-    application = webapp.WSGIApplication([('/', MainHandler)],
+    application = webapp.WSGIApplication([('/(enter|spy|say)', MainHandler)],
                                          debug=True)
     util.run_wsgi_app(application)
 

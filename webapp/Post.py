@@ -19,7 +19,11 @@ class Post(GeoModel):
         Turn this Post into a dict, suitable for serialization.
         """
         d = {}
-        d['u'] = self.user.to_public_dict()
+        d['k'] = str(self.key())
         d['d'] = self.date.strftime('%Y-%m-%d %H:%M:%S')
         d['m'] = self.msg
         d['l'] = [ self.location.lat, self.location.lon ]
+        d['n'] = self.user.name
+        if self.user.avatar != None:
+            d['a'] = self.user.avatar
+        return d

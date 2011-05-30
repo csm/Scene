@@ -1,3 +1,6 @@
 [submodule "MBProgressHUD"]
 	path = MBProgressHUD
 	url = https://github.com/matej/MBProgressHUD.git
+[submodule "Scene/Scene/JSON"]
+	path = Scene/Scene/JSON
+	url = https://github.com/stig/json-framework.git

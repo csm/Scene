@@ -14,8 +14,13 @@
 
 
 @synthesize window=_window;
-
 @synthesize mainViewController=_mainViewController;
+@synthesize location;
+
++ (SceneAppDelegate *) sharedDelegate
+{
+    return (SceneAppDelegate *) [[UIApplication sharedApplication] delegate];
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -23,6 +28,14 @@
     // Add the main view controller's view to the window and display.
     self.window.rootViewController = self.mainViewController;
     [self.window makeKeyAndVisible];
+    
+    locationManager = [[CLLocationManager alloc] init];
+    locationManager.delegate = self;
+    if ([CLLocationManager significantLocationChangeMonitoringAvailable])
+        [locationManager startMonitoringSignificantLocationChanges];
+    else
+        [locationManager startUpdatingLocation];
+    
     return YES;
 }
 
@@ -32,6 +45,7 @@
      Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
      Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
      */
+    [locationManager stopUpdatingLocation];
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
@@ -54,6 +68,10 @@
     /*
      Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
      */
+    if ([CLLocationManager significantLocationChangeMonitoringAvailable])
+        [locationManager startMonitoringSignificantLocationChanges];
+    else
+        [locationManager startUpdatingLocation];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
@@ -63,6 +81,13 @@
      Save data if appropriate.
      See also applicationDidEnterBackground:.
      */
+}
+
+- (void) locationManager: (CLLocationManager *) manager
+     didUpdateToLocation: (CLLocation *) newLocation
+            fromLocation: (CLLocation *) oldLocation
+{
+    self.location = newLocation;
 }
 
 - (void)dealloc

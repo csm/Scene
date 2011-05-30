@@ -15,12 +15,3 @@ class UserInfo(db.Model):
     
     # The user's name.
     name = db.StringProperty(required = True)
-    
-    def to_public_dict(self):
-        """
-        Turn this UserInfo into a dict, suitable for serialization to the public.
-        """
-        d = {}
-        d['n'] = self.name
-        if self.avatar != None:
-            d['a'] = str(self.avatar)

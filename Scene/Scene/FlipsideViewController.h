@@ -7,11 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GradientButton.h"
 
 @protocol FlipsideViewControllerDelegate;
 
-@interface FlipsideViewController : UIViewController {
-
+@interface FlipsideViewController : UIViewController
+{
+    IBOutlet UILabel *locLabel;
+    IBOutlet UILabel *locStatusLabel;
+    IBOutlet UILabel *locServLabel;
+    IBOutlet UILabel *accountLabel;
+    IBOutlet UILabel *accountInsLabel;
+    IBOutlet UITextField *nameField;
+    IBOutlet UILabel *versionLabel;
+    IBOutlet UILabel *copyrightLabel;
+    IBOutlet GradientButton *button;
 }
 
 @property (nonatomic, assign) id <FlipsideViewControllerDelegate> delegate;

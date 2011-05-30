@@ -9,9 +9,14 @@
 #import "FlipsideViewController.h"
 
 @interface MainViewController : UIViewController <FlipsideViewControllerDelegate> {
-
+    UIImageView *splashImage;
+    UILabel *lastPostLabel;
+    UILabel *lastPostDetailLabel;
 }
 
+@property (retain, nonatomic) IBOutlet UIImageView *splashImage;
+@property (retain, nonatomic) IBOutlet UILabel *lastPostLabel;
+@property (retain, nonatomic) IBOutlet UILabel *lastPostDetailLabel;
 
 - (IBAction)showInfo:(id)sender;
 

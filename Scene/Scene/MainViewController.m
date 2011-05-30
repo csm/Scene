@@ -10,6 +10,10 @@
 
 @implementation MainViewController
 
+@synthesize splashImage;
+@synthesize lastPostLabel;
+@synthesize lastPostDetailLabel;
+
 /*
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
@@ -17,6 +21,39 @@
     [super viewDidLoad];
 }
 */
+
+- (void) fadeOutSplashImageAnimation: (NSString *) animationId
+                            finished: (BOOL) finished
+                             context: (void *) context
+{
+    [self.splashImage removeFromSuperview];
+    self.splashImage = nil;
+}
+
+- (void) viewDidLoad
+{
+    [super viewDidLoad];
+    [self.lastPostLabel setFont: [UIFont fontWithName: @"DroidSans"
+                                                 size: 17]];
+    [self.lastPostDetailLabel setFont: [UIFont fontWithName: @"DroidSans"
+                                                       size: 13]];
+}
+
+- (void) viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear: animated];
+    if (self.splashImage != nil)
+    {
+        [UIView beginAnimations: @"FadeOutSplashImage"
+                        context: nil];
+        [UIView setAnimationCurve: UIViewAnimationCurveEaseIn];
+        [UIView setAnimationDuration: 1.0];
+        [UIView setAnimationDelegate: self];
+        [UIView setAnimationDidStopSelector: @selector(fadeOutSplashImageAnimation:finished:context:)];
+        self.splashImage.alpha = 0;
+        [UIView commitAnimations];
+    }
+}
 
 - (void)flipsideViewControllerDidFinish:(FlipsideViewController *)controller
 {
@@ -28,7 +65,7 @@
     FlipsideViewController *controller = [[FlipsideViewController alloc] initWithNibName:@"FlipsideView" bundle:nil];
     controller.delegate = self;
     
-    controller.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    controller.modalTransitionStyle = UIModalTransitionStylePartialCurl;
     [self presentModalViewController:controller animated:YES];
     
     [controller release];
