@@ -27,6 +27,14 @@
 
 - (void)dealloc
 {
+    [locLabel release];
+    [locStatusLabel release];
+    [locServLabel release];
+    [accountLabel release];
+    [accountInsLabel release];
+    [button release];
+    [versionLabel release];
+    [copyrightLabel release];
     [super dealloc];
 }
 
@@ -79,6 +87,8 @@
         [locStatusLabel setText: @"ON"];
         [locStatusLabel setTextColor: [UIColor colorWithRed:0.000 green:0.502 blue:0.000 alpha:1.000]];
     }
+    
+    
 }
 
 - (void)viewDidUnload
